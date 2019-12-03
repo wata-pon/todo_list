@@ -1,6 +1,6 @@
 # Create your views here.
-from django.http import HttpResponse
+from django.views.generic import ListView
 
 
-def todolist(request):
-    return HttpResponse('Todo')
+class TodoList(ListView):
+    template_name = 'list.html'
