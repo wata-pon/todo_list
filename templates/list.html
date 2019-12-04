@@ -1,7 +1,27 @@
-{% for item in object_list %}
-    <ul>
-        <li>{{ item.title }}</li>
-        <li>{{ item.memo }}</li>
-    </ul>
+{% extends 'base.html' %}
 
-{% endfor %}
+{% block header %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">TodoList</h1>
+            <p class="lead">毎日を効率的に</p>
+        </div>
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <div class="container">
+        {% for item in object_list %}
+            <div class="alert alert-{{ item.priority }}" role="alert">
+                <p>{{ item.title }}</p>
+                <button type="button" class="btn btn-info">編集</button>
+                <button type="button" class="btn btn-secondary">削除</button>
+                <button type="button" class="btn btn-secondary">詳細</button>
+            </div>
+
+
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+

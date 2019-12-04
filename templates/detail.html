@@ -1,2 +1,18 @@
-{{ object.title }}
-{{ object.memo }}
+{% extends 'base.html' %}
+
+{% block header %}
+    詳細です。
+{% endblock header %}
+
+
+{% block content %}
+
+    <div class="alert alert-success" role="alert">
+        {{ object.title }}
+    </div>
+
+    <div class="alert alert-success" role="alert">
+        {{ object.memo }}
+    </div>
+
+{% endblock content %}
