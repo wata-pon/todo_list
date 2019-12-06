@@ -11,6 +11,7 @@
 
 {% block content %}
     <div class="container">
+        <a href="{% url 'create' %}" class="btn btn-info">新規作成</a>
         {% for item in object_list %}
             <div class="alert alert-{{ item.priority }}" role="alert">
                 <p>{{ item.title }}</p>
